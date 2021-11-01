@@ -15,8 +15,8 @@ public class Curso {
 	public Curso(String n, int num, Estudiante e) {
 
 	}
-	*/
-	
+	 */
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -40,7 +40,7 @@ public class Curso {
 	public void setPrimero(Estudiante primero) {
 		this.primero = primero;
 	}
-	
+
 	//Método de añadir estudiantes
 	public void addEstudiante(Estudiante e) {
 		if(primero == null) {
@@ -61,46 +61,49 @@ public class Curso {
 	public void addEstudianteOrdenadamente(Estudiante e) {
 
 	}
-	*/
-	
+	 */
+
 	//Método de eliminar estudiantes
-	public int eliminarEstudiante(String code) {
+	public int eliminarEstudiantes(String code) {
 		Estudiante temp = primero;
+		if (primero == null) {
+			return 2;
+		} else {
+			do {
+				if(temp.getCodigo().equals(code)) {
+					if(temp == primero && temp.getSiguiente() == primero) {
+						primero = null;
+					} else if(temp == primero && temp.getSiguiente() != primero) {
+						primero = primero.getSiguiente();
+						ultimo.setSiguiente(primero);
+					} else {
+						temp.getAnterior().setSiguiente(temp.getSiguiente());
+						temp.getSiguiente().setAnterior(temp.getAnterior());
+						temp = primero;
+					}
 
-		do {
-			if(temp.getCodigo().equals(code)) {
-				if(temp == primero && temp.getSiguiente() == primero) {
-					primero = null;
-				} else if(temp == primero && temp.getSiguiente() != primero) {
-					primero = primero.getSiguiente();
-					ultimo.setSiguiente(primero);
+					return 1;
 				} else {
-					temp.getAnterior().setSiguiente(temp.getSiguiente());
-					temp.getSiguiente().setAnterior(temp.getAnterior());
-					temp = primero;
+					temp = temp.getSiguiente();
 				}
-
-				return 1;
-			} else {
-				temp = temp.getSiguiente();
-			}
-		}while(temp != primero);
+			}while(temp != primero);
+		}
 		return -1;
 	}
-	
+
 	/*
 	public void pintarEstudiantes() {
 
 	}
-	*/
-	
+	 */
+
 	/*
 	public void pintarAtrasAdelanteEstudiantes() {
 
 	}
-	*/
-	
-	
+	 */
+
+
 	//Método de mostrar en pantalla estudiantes
 	public String pintarGeneral() {
 		String s = "";
@@ -111,7 +114,7 @@ public class Curso {
 				temp = temp.getSiguiente();
 			}while(temp != primero);
 		} else {
-			s = "No hay estudiantes registrados aun\n";
+			s = "No hay estudiantes registrados";
 		}
 
 		return s;
@@ -121,7 +124,7 @@ public class Curso {
 	public void pintarEstudiantesRecursivo(Estudiante e) {
 
 	}
-	*/
-	
-	
+	 */
+
+
 }
