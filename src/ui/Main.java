@@ -36,7 +36,7 @@ public class Main {
 			switch(o){
 			case 1:
 				try {
-					System.out.print("\n================================");
+					System.out.print("================================");
 					System.out.print("Registra " + curso.getNumEstudiantes() + " estudiantes por favor");
 					System.out.print("================================");
 					addEstudiante(0);
@@ -67,9 +67,9 @@ public class Main {
 
 
 	public static void addEstudiante(int i) throws IOException {
-		
+
 		if (i<curso.getNumEstudiantes()) {
-			
+
 			System.out.print("\nCodigo: ");
 			String code = br.readLine();
 			System.out.print("Nombre: ");
@@ -109,10 +109,10 @@ public class Main {
 	public static void imprimirEstudiantes() {
 		System.out.println("==============================");
 		System.out.println("=====Estudiantes Actuales=====");
-		
+
 		System.out.println(curso.pintarGeneral());
-		System.out.print("==============================\n");
-		
+		System.out.println("==============================\n");
+
 	}
 
 
