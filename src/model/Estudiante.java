@@ -3,17 +3,17 @@ package model;
 public class Estudiante {
 	private String codigo;
 	private String nombre;
-	
+
 	private Estudiante siguiente;
 	private Estudiante anterior;
-	
-	//Constructor
+
+
 	public Estudiante(String codigo, String nombre) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 	}
-	
-	//Getters and Setters
+
+
 	public String getCodigo() {
 		return codigo;
 	}
@@ -45,7 +45,7 @@ public class Estudiante {
 	public void setAnterior(Estudiante anterior) {
 		this.anterior = anterior;
 	}
-	
+
 	//toString
 	public String toString() {
 		return codigo + " - " + nombre;
