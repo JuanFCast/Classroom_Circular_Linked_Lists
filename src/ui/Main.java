@@ -36,9 +36,9 @@ public class Main {
 			switch(o){
 			case 1:
 				try {
-					System.out.print("================================");
-					System.out.print("Registra " + curso.getNumEstudiantes() + " estudiantes por favor");
-					System.out.print("================================");
+					System.out.println("================================");
+					System.out.println("Registra " + curso.getNumEstudiantes() + " estudiantes por favor");
+					System.out.println("================================");
 					addEstudiante(0);
 				} catch (IOException e) {
 					System.out.println("Por favor ingrese texto valido");
